@@ -54,14 +54,39 @@ public class AppRunner {
         return allowProducts;
     }
 
+    public void paymentCard(){
+        Payment pinCode = new Payment();
+        pinCode.paymentCard();
+
+    }
+
     private void chooseAction(UniversalArray<Product> products) {
         print(" a - Пополнить баланс");
+        print(" a - Пополнить баланс");
+
         showActions(products);
         print(" h - Выйти");
         String action = fromConsole().substring(0, 1);
         if ("a".equalsIgnoreCase(action)) {
             coinAcceptor.setAmount(coinAcceptor.getAmount() + 10);
             print("Вы пополнили баланс на 10");
+            return;
+        }
+        if ("a".equalsIgnoreCase(action)) {
+            System.out.println("Выберите способ оплаты...\n a - Пополнить монетами\n b - Пополнить банковской картой");
+            String payment = fromConsole().substring(0, 1);
+            if ("a".equalsIgnoreCase(payment) || "b".equalsIgnoreCase(payment)){
+                coinAcceptor.setAmount(coinAcceptor.getAmount() + 10);
+                if ("b".equalsIgnoreCase(payment)) {
+                    paymentCard();
+                }
+                if("a".equalsIgnoreCase(payment) || "b".equalsIgnoreCase(payment)){
+                    print("Вы пополнили баланс на 10");
+                }
+            } else {
+                System.out.println("Недопустимая буква. Попрбуйте еще раз.");
+                chooseAction(products);
+            }
             return;
         }
         try {
