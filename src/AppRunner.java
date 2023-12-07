@@ -62,8 +62,6 @@ public class AppRunner {
 
     private void chooseAction(UniversalArray<Product> products) {
         print(" a - Пополнить баланс");
-        print(" a - Пополнить баланс");
-
         showActions(products);
         print(" h - Выйти");
         String action = fromConsole().substring(0, 1);
