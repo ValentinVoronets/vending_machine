@@ -77,6 +77,9 @@ public class AppRunner {
                 if("a".equalsIgnoreCase(payment) || "b".equalsIgnoreCase(payment)){
                     print("Вы пополнили баланс на 10");
                 }
+            } else {
+                System.out.println("Недопустимая буква. Попрбуйте еще раз.");
+                chooseAction(products);
             }
             return;
         }
