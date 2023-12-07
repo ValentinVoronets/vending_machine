@@ -54,6 +54,12 @@ public class AppRunner {
         return allowProducts;
     }
 
+    public void paymentCard(){
+        Payment pinCode = new Payment();
+        pinCode.paymentCard();
+
+    }
+
     private void chooseAction(UniversalArray<Product> products) {
         showActions(products);
         print(" h - Выйти");
